@@ -329,7 +329,9 @@ section > img, .collections__section > img {
     }
   }
 
-
+footer > div > h4 {
+    font-size: var(--text-p);
+}
   /* COLLECTION PAGE */
 
   .collection-1 {
