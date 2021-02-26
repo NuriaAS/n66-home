@@ -28,6 +28,7 @@ a {
     padding: 0.5;
     position: relative;
     z-index: 2;
+    text-decoration: none;
 }
 h1, h3 {
     font-size: var(--text-titles);
@@ -49,6 +50,7 @@ h2, h4, a, nav {
 }
 p {
     font-family: 'Alegreya Sans', sans-serif;
+    letter-spacing: 1;
 }
 .nav {
     display: flex;
@@ -323,7 +325,87 @@ section > img, .collections__section > img {
       
     }
   }
-  @media (min-width: 800px) {
+
+
+  /* COLLECTION PAGE */
+
+  .collection-1 {
+      height: 35%;
+      background-image: url('imgs/pottery1-group.jpg');
+      padding-bottom: 8%;
+  }
+  .collection-description {
+      background-color: var(--color-gray);
+  }
+  .products-row {
+      width: 100%;
+      padding: 0 2rem;
+      display: flex; 
+      border-bottom: none;
+  }
+  .products-row__items {
+      padding-bottom: 4rem;
+  }
+  .products-row__items > img {
+    width: 100%;
+    padding-bottom: 1.5rem;
+  }
+  .products-row__items__price {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--text-color);
+  }
+  .products-row__items__description {
+      padding-top: 1rem;
+  }
+
+  .sugestions {
+      flex-direction: column;
+      background-color: var(--color-gray);
+  }
+  .segestions__items {
+      display: flex;  
+      justify-content: space-between;
+  }
+  .sugestions__items_item {
+      flex-basis: 40%;
+  }
+  .sugestions__title {
+      padding-bottom: 2rem;
+      font-size: var(--text-subtitles);
+  }
+  .sugestions__items_item > img {
+      width: 100%;
+      padding-bottom: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .products-row {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .products-row__items {
+        max-width: 30%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    .products-row__items > h4 {
+        text-overflow: ellipsis;
+
+        /* Needed to make it work */
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .sugestions {
+        padding-left: 12rem;
+        padding-right: 12rem;
+    }
+    .sugestions__title {
+        padding-bottom: 4rem;
+        font-size: var(--text-subtitles);
+    }
+  }
+  @media (min-width: 900px) {
     h1, h3 {
         font-size: 2rem;
     }
@@ -478,7 +560,7 @@ section > img, .collections__section > img {
     }
    
     section {
-        padding: 10rem;
+        padding: 8rem;
     }
     footer {
         padding: 6rem 12rem 6rem 12rem;
@@ -524,6 +606,14 @@ section > img, .collections__section > img {
         padding-bottom: 4rem;
     }
     
+     /* COLLECTION PAGE */
 
+    .collection-1 {
+        height: 50%;
+    }
     
+    
+    .collection-description > p {
+        flex-basis: 60%;
+    }
   }
