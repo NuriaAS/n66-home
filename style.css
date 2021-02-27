@@ -201,7 +201,7 @@ header {
     padding: 1rem 1.5rem 1rem 1.5rem;
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     background-color: transparent;
     transition: background-color 1s ease-out;
 }
@@ -224,6 +224,10 @@ header {
 .button:hover {
     transition: background 0.2s ease-out;
     background: rgba(173, 173, 173, 0.5);
+}
+.button > a {
+    position: relative;
+    z-index: 1;
 }
 .hero > .button {
     background: rgba(173, 173, 173, 0.5);
@@ -345,8 +349,9 @@ footer > div > h4 {
   .products-row {
       width: 100%;
       padding: 0 2rem;
-      display: flex; 
       border-bottom: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill,1fr);
   }
   .products-row__items {
       padding-bottom: 4rem;
@@ -361,6 +366,11 @@ footer > div > h4 {
   }
   .products-row__items__description {
       padding-top: 1rem;
+      padding-bottom: 1rem;
+  }
+  .products-row__items > .button {
+    padding: 0.20rem 0.8rem;
+    font-size: var(--text-p);
   }
 
   .sugestions {
@@ -383,21 +393,18 @@ footer > div > h4 {
       padding-bottom: 1.5rem;
   }
   @media (min-width: 768px) {
+    .products {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
     .products-row {
-        flex-direction: row;
-        justify-content: space-between;
         padding-left: 0;
         padding-right: 0;
-    }
-    .products-row__items {
-        max-width: 30%;
-        padding-right: 1rem;
-        padding-left: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,45%);
     }
     .products-row__items > h4 {
         text-overflow: ellipsis;
-
-        /* Needed to make it work */
         overflow: hidden;
         white-space: nowrap;
     }
@@ -616,9 +623,10 @@ footer > div > h4 {
     .collection-1 {
         height: 50%;
     }
-    
-    
     .collection-description > p {
         flex-basis: 60%;
+    }
+    .products-row {
+        grid-template-columns: repeat(auto-fill,31%);
     }
   }
