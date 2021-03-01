@@ -211,10 +211,10 @@ header {
 }
 .button {
     font-family: Alegreya;
-    font-size: 1.5rem;
+    font-size: var(--text-p);
     font-weight: var(--text-bold);
     color: var(--text-color);
-    padding: 0.30rem 1rem;
+    padding: 0.20rem 0.8rem;
     border: 1px solid var(--text-color);
     border-radius: 5px;
     background: transparent;
@@ -359,6 +359,7 @@ footer > div > h4 {
   .products-row__items > img {
     width: 100%;
     padding-bottom: 1.5rem;
+    cursor: pointer;
   }
   .products-row__items__price {
       padding-bottom: 1rem;
@@ -368,10 +369,76 @@ footer > div > h4 {
       padding-top: 1rem;
       padding-bottom: 1rem;
   }
-  .products-row__items > .button {
-    padding: 0.20rem 0.8rem;
-    font-size: var(--text-p);
+ 
+ 
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    padding-top: 120px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgb(245, 245, 245);
+    background-color: rgba(245, 245, 245, 0.8);
   }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 700px;
+  }
+
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: var(--text-color);
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation */
+  .modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+    color: var(--text-color);
+    font-size: 40px;
+    font-family: 'Alegreya Sans', sans-serif;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
 
   .sugestions {
       flex-direction: column;
@@ -398,6 +465,7 @@ footer > div > h4 {
   .sugestions__items_item > p {
       font-size: 1rem;
   }
+
   @media (min-width: 768px) {
     .products {
         padding-left: 8rem;
@@ -630,5 +698,19 @@ footer > div > h4 {
     }
     .products-row {
         grid-template-columns: repeat(auto-fill,31%);
+    }
+    .modal {
+        padding-top: 100px;
+    }
+    .modal-content {
+        width: 80%;  
+    }
+    #caption {
+        padding: 30px 0;
+        font-size: var(--text-subtitles);
+    }
+    .close {
+        font-size: 50px;
+        top: 1rem;
     }
   }
